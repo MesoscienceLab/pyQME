@@ -1,7 +1,7 @@
 import numpy as np
 from .redfield import RedfieldTensor
 from ...utils import h_bar
-from scipy.integrate import cumtrapz
+from scipy.integrate import cumulative_trapezoid as cumtrapz
 from opt_einsum import contract
 
    

@@ -2,7 +2,7 @@ import numpy as np
 from ..relaxation_tensor_double import RelTensorDoubleNonMarkov
 from ...utils import _get_H_double
 from opt_einsum import contract
-from scipy.integrate import cumtrapz
+from scipy.integrate import cumulative_trapezoid as cumtrapz
 
 class RedfieldTensorDouble(RelTensorDoubleNonMarkov):
     """Redfield Tensor class where Redfield Theory (https://doi.org/10.1016/B978-1-4832-3114-3.50007-6) is used to model energy transfer processes.

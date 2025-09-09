@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.integrate import simps
+from scipy.integrate import simpson as simps
 from scipy.special import comb
 from scipy.interpolate import UnivariateSpline
 from .linear_spectra import SecularSpectraCalculator

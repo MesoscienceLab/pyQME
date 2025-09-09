@@ -1,7 +1,7 @@
 import numpy as np
 from ..relaxation_tensor import RelTensorNonMarkov
 from ...utils import h_bar,factOD
-from scipy.integrate import cumtrapz
+from scipy.integrate import cumulative_trapezoid as cumtrapz
 from opt_einsum import contract
 
 class ForsterTensor(RelTensorNonMarkov):

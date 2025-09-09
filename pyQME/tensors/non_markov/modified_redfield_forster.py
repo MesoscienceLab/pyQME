@@ -2,7 +2,7 @@ import numpy as np
 from ..relaxation_tensor import RelTensor
 from .modified_redfield import ModifiedRedfieldTensor
 from ...utils import h_bar
-from scipy.integrate import cumtrapz
+from scipy.integrate import cumulative_trapezoid as cumtrapz
 from opt_einsum import contract
 
 class ModifiedRedfieldForsterTensor(ModifiedRedfieldTensor):

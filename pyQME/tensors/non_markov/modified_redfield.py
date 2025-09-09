@@ -1,6 +1,6 @@
 import numpy as np
 from .redfield import RedfieldTensor
-from scipy.integrate import cumtrapz
+from scipy.integrate import cumulative_trapezoid as cumtrapz
 
 class ModifiedRedfieldTensor(RedfieldTensor):
     """Modified Redfield Tensor class where Modified Redfield Theory (https://doi.org/10.1063/1.476212) is used to model energy transfer processes.
@@ -162,10 +162,10 @@ def _calc_modified_redfield_rates(Om,weight_aabb,weight_aaab,reorg_site,g_site,g
     Om: np.array(dtype=np.float), shape = (dim,dim)
         Om[a,b] = omega_b - omega_a, where omega are the energies in cm^-1
     weight_aabb: np.array(dtype=np.float), shape = (nsd,dim,dim)
-        weight_aabb[Z,a,b] = sum_{i \in Z} c_ia^2 c_ib^2 
+        weight_aabb[Z,a,b] = sum_{i in Z} c_ia^2 c_ib^2
         where nsd is the number of spectral densities
     weight_aaab: np.array(dtype=np.float), shape = (nsd,dim,dim)
-        weight_aabb[Z,a,b] = sum_{i \in Z} c_ia c_ib^3 
+        weight_aabb[Z,a,b] = sum_{i in Z} c_ia c_ib^3
         where nsd is the number of spectral densities
     reorg_site: np.array(dtype=np.float), shape = (nsd)
         reorganization energies in cm^-1 in the site basis
@@ -235,7 +235,7 @@ def _mr_rates_loop(Om,g_aabb,gdot_abbb,gddot_abba,reorg_aabb,reorg_aaab,damper,t
     xi: np.array(dtype=np.complex128), shape = (dim,time_axis.size)
         off-diagonal term accounting for lambda-shift
     weight_aabb: np.array(dtype=np.float), shape = (nsd,dim,dim)
-        weight_aabb[Z,a,b] = sum_{i \in Z} c_ia^2 c_ib^2 
+        weight_aabb[Z,a,b] = sum_{i in Z} c_ia^2 c_ib^2
         where nsd is the number of spectral densities
         
     Returns

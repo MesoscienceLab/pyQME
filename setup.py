@@ -8,6 +8,13 @@ setup(
     author_email="piermarco.saraceno@phd.unipi.it",
     description=open("README.md").read(),
     packages=find_packages(),
-    python_requires='>3.5.0',
-    install_requires=["numpy", "scipy", "opt_einsum","tqdm","psutil","pathlib"],
+    python_requires='>3.8',
+    install_requires=[
+        "numpy>=1.26",  # safe baseline for new Python
+        "scipy>=1.13",
+        "opt_einsum>=3.3",
+        "tqdm>=4.60",
+        "psutil>=5.8",
+        "matplotlib>=3.8",
+    ],
 )
